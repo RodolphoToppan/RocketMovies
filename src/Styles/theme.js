@@ -11,6 +11,8 @@ export default {
 
     BUTTON_FONT: '#312E38',
 
+    BORDER_BOTTOM: '#3E3B47',
+
     PINK_300: '#FF859B',
     PINK_100: 'rgba(255, 133, 155, 0.05)'
   }

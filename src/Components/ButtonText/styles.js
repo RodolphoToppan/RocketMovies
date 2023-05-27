@@ -1,9 +1,8 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
-export const Container = styled(Link)`
+export const Container = styled.button`
   width: fit-content;
-  background: transparent;
+  background: none;
   color: ${({ theme }) => theme.COLORS.PINK_300};
 
   border: none;

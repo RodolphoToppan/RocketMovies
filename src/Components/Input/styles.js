@@ -24,9 +24,8 @@ export const Container = styled.div`
   }
 
   svg {
-    width: 2rem;
-    height: 2rem;
+    size: 2rem;
 
-    margin-right: 1.6rem;
+    margin-left: 1.6rem;
   }
 `

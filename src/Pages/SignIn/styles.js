@@ -42,6 +42,16 @@ export const Form = styled.form`
   > div {
     margin-bottom: 0.8rem;
   }
+
+  a {
+    color: ${({ theme }) => theme.COLORS.PINK_300};
+
+    margin: 4.2rem auto 0;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+  }
 `
 
 export const Background = styled.div`

@@ -2,9 +2,15 @@ import styled from 'styled-components'
 
 export const Container = styled.button`
   width: 100%;
+  height: 5.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+
   background-color: ${({ theme }) => theme.COLORS.PINK_300};
   color: ${({ theme }) => theme.COLORS.BUTTON_FONT};
-  height: 5.6rem;
 
   border-radius: 1rem;
   border: none;
