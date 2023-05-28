@@ -4,16 +4,28 @@ import { Button } from '../../Components/Button'
 
 import { FiPlus } from 'react-icons/fi'
 
-import { Container, InsideHeader } from './styles'
+import { Container, Content, InsideHeader, Main } from './styles'
+import { MoviesDescription } from '../../Components/MoviesDescription'
+import { Link } from 'react-router-dom'
 
 export function Home() {
   return (
     <Container>
       <Header />
-      <InsideHeader>
-        <h2>Meus filmes</h2>
-        <Button title="Adicionar filme" icon={FiPlus} />
-      </InsideHeader>
+
+      <Content>
+        <InsideHeader>
+          <h2>Meus filmes</h2>
+          <Link to="/newmovie">
+            <Button title="Adicionar filme" icon={FiPlus} />
+          </Link>
+        </InsideHeader>
+        <Main>
+          <MoviesDescription />
+          <MoviesDescription />
+          <MoviesDescription />
+        </Main>
+      </Content>
     </Container>
   )
 }

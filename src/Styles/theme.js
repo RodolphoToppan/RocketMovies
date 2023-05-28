@@ -10,6 +10,8 @@ export default {
     WHITE: '#F4EDE8',
 
     BUTTON_FONT: '#312E38',
+    TAG_COLOR: '#E5E5E5',
+    DESCRIPTION: '#999591',
 
     BORDER_BOTTOM: '#3E3B47',
 

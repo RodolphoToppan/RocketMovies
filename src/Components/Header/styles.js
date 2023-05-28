@@ -17,6 +17,7 @@ export const Container = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BORDER_BOTTOM};
 
   grid-area: header;
+
   > h1 {
     font-weight: 700;
     font-size: 2.4rem;
