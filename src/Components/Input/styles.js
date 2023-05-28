@@ -21,6 +21,11 @@ export const Container = styled.div`
 
     border: none;
     background: transparent;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
   }
 
   svg {
