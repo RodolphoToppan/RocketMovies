@@ -21,7 +21,9 @@ export function Home() {
           </Link>
         </InsideHeader>
         <Main>
-          <MoviesDescription />
+          <Link to="/details">
+            <MoviesDescription />
+          </Link>
           <MoviesDescription />
           <MoviesDescription />
         </Main>
