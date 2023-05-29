@@ -5,6 +5,8 @@ import { Header } from '../../Components/Header'
 import { StarButton } from '../../Components/StarButton'
 import { Tag } from '../../Components/Tag'
 
+import { Link } from 'react-router-dom'
+
 import { Author, Container, Content, Tags } from './styles'
 
 export function MovieDetails() {
@@ -12,7 +14,9 @@ export function MovieDetails() {
     <Container>
       <Header />
       <Content>
-        <ButtonText title="Voltar" icon={FiArrowLeft} />
+        <Link to="/">
+          <ButtonText title="Voltar" icon={FiArrowLeft} />
+        </Link>
         <h2>Interestellar</h2>
         <div className="rate">
           <StarButton />
