@@ -52,6 +52,10 @@ export const Form = styled.form`
     font-size: 1.6rem;
     line-height: 2.1rem;
   }
+
+  button {
+    margin: auto;
+  }
 `
 
 export const Background = styled.div`
