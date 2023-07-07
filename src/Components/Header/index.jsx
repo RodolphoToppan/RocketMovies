@@ -1,9 +1,16 @@
+import { useAuth } from '../../hooks/auth'
 import { Container, Form, Login } from './styles'
 
 import { Input } from '../Input'
-import { Link } from 'react-router-dom'
+import { ButtonText } from '../ButtonText'
+import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 export function Header() {
+  const { signOut } = useAuth()
+  const [search, setSearch] = useState('')
+  const navigate = useNavigate()
+
   return (
     <Container>
       <h1>RocketMovies</h1>
@@ -13,7 +20,7 @@ export function Header() {
       <Login>
         <div>
           <Link to="/profile">Rodrigo Gonçalves</Link>
-          <Link to="/sigin">sair</Link>
+          <ButtonText title="sair" onClick={signOut}></ButtonText>
         </div>
         <Link to="/profile">
           <img

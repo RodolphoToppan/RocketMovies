@@ -2,11 +2,23 @@ import { FiStar } from 'react-icons/fi'
 
 import { Container, Rate, Tags } from './styles'
 import { Tag } from '../Tag'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
 
-export function MoviesDescription() {
+export function MoviesDescription({ data, ...rest }) {
+  const [tags, setTags] = useState([])
+
+  useEffect(() => {
+    async function fetchTags() {
+      const movieTags = await api.get(`/notes/${data.id}`)
+      setTags(movieTags.data.tags)
+    }
+    fetchTags()
+  }, [])
+
   return (
-    <Container>
-      <h1>Interestellar</h1>
+    <Container {...rest}>
+      <h1>{data.title}</h1>
       <Rate>
         <button>
           <FiStar />
@@ -24,18 +36,10 @@ export function MoviesDescription() {
           <FiStar />
         </button>
       </Rate>
-      <p>
-        Pragas nas colheitas fizeram a civilização humana regredir para uma
-        sociedade agrária em futuro de data desconhecida. Cooper, ex-piloto da
-        NASA, tem uma fazenda com sua família. Murphy, a filha de dez anos de
-        Cooper, acredita que seu quarto está assombrado por um fantasma que
-        tenta se ...
-      </p>
+      <p>{data.description}</p>
 
       <Tags>
-        <Tag title="Ficção científica" />
-        <Tag title="Drama" />
-        <Tag title="Família" />
+        {tags && tags.map(tag => <Tag key={String(tag.id)} title={tag.name} />)}
       </Tags>
     </Container>
   )

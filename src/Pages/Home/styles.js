@@ -44,7 +44,7 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
 
-  gap: 2.4rem;
+  row-gap: 2.4rem;
 
   margin: 0 11rem 5rem;
 `
