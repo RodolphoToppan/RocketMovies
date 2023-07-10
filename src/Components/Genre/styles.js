@@ -10,11 +10,11 @@ export const Container = styled.div`
   padding: 1.6rem;
   gap: 1.6rem;
 
-  background-color: ${({ isNew, theme }) =>
-    isNew ? 'none' : theme.COLORS.BACKGROUND_700};
+  background-color: ${({ isnew, theme }) =>
+    isnew ? 'none' : theme.COLORS.BACKGROUND_700};
 
-  border: ${({ isNew, theme }) =>
-    isNew
+  border: ${({ isnew, theme }) =>
+    isnew
       ? `1px dashed ${theme.COLORS.DESCRIPTION}`
       : theme.COLORS.BACKGROUND_700};
   border-radius: 1rem;

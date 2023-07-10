@@ -1,18 +1,18 @@
 import { FiX, FiPlus } from 'react-icons/fi'
 import { Container } from './styles'
 
-export function Genre({ value, isNew, ...rest }) {
+export function Genre({ value, isnew = false, ...rest }) {
   return (
-    <Container isNew={isNew} {...rest}>
+    <Container isnew={isnew} {...rest}>
       <input
         type="text"
         value={value}
         placeholder="Novo marcador"
-        readOnly={!isNew}
+        readOnly={!isnew}
         {...rest}
       />
-      <button className={isNew ? 'button-add' : 'button-delete'}>
-        {isNew ? <FiPlus /> : <FiX />}
+      <button className={isnew ? 'button-add' : 'button-delete'}>
+        {isnew ? <FiPlus /> : <FiX />}
       </button>
     </Container>
   )

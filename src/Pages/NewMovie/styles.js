@@ -81,6 +81,7 @@ export const Section = styled.section`
 
   gap: 4rem;
   width: 100%;
+
   h3 {
     font-weight: 400;
     font-size: 2rem;

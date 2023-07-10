@@ -16,8 +16,6 @@ export const Container = styled.div`
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.BORDER_BOTTOM};
 
-  grid-area: header;
-
   > h1 {
     font-weight: 700;
     font-size: 2.4rem;
@@ -29,6 +27,33 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   width: 63rem;
+
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+  border-radius: 1rem;
+
+  input {
+    width: 100%;
+
+    height: 5.6rem;
+    padding: 1.6rem;
+
+    color: ${({ theme }) => theme.COLORS.WHITE};
+
+    border: none;
+    background: transparent;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+  }
+
+  svg {
+    size: 2rem;
+
+    margin-left: 1.6rem;
+  }
 `
 
 export const Login = styled.div`
@@ -50,5 +75,7 @@ export const Login = styled.div`
     width: 6.4rem;
     height: 6.4rem;
     border-radius: 50%;
+
+    cursor: pointer;
   }
 `

@@ -1,7 +1,7 @@
 import { api } from '../../services/api'
 
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { Header } from '../../Components/Header'
 
