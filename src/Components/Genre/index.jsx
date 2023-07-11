@@ -1,7 +1,7 @@
 import { FiX, FiPlus } from 'react-icons/fi'
 import { Container } from './styles'
 
-export function Genre({ value, isnew = false, ...rest }) {
+export function Genre({ value, onClick, isnew = false, ...rest }) {
   return (
     <Container isnew={isnew} {...rest}>
       <input
@@ -11,7 +11,11 @@ export function Genre({ value, isnew = false, ...rest }) {
         readOnly={!isnew}
         {...rest}
       />
-      <button className={isnew ? 'button-add' : 'button-delete'}>
+      <button
+        type="button"
+        className={isnew ? 'button-add' : 'button-delete'}
+        onClick={onClick}
+      >
         {isnew ? <FiPlus /> : <FiX />}
       </button>
     </Container>

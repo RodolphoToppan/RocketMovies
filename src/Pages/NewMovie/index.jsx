@@ -9,10 +9,11 @@ import { Input } from '../../Components/Input'
 
 import { Container, Content, Section } from './styles'
 import { Genre } from '../../Components/Genre'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 export function NewMovie() {
+  const navigate = useNavigate()
   const [movieName, setMovieName] = useState('')
   const [movieRating, setMovieRating] = useState(0)
   const [movieDescription, setMovieDescription] = useState('')
@@ -24,26 +25,20 @@ export function NewMovie() {
     setNewTag('')
   }
 
-  async function addNewMovie() {
-    try {
-      const response = await api.post('/notes', {
-        movieName,
-        movieRating,
-        movieDescription
-      })
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
+  }
 
-      console.log(response)
+  async function handleAddNewMovie() {
+    await api.post('/notes', {
+      title: movieName,
+      rating: movieRating,
+      description: movieDescription,
+      tags
+    })
 
-      // const { token, user } = response.data
-
-      // setData({ user, token })
-    } catch (error) {
-      if (error.response.data.message) {
-        alert(error.response.data.message)
-      } else {
-        alert('Não foi possível cadastrar um novo filme')
-      }
-    }
+    alert('Filme cadastrado com sucesso')
+    navigate('/')
   }
 
   return (
@@ -51,9 +46,12 @@ export function NewMovie() {
       <Header />
 
       <Content>
-        <Link to="/">
-          <ButtonText icon={FiArrowLeft} title="Voltar" className="voltar" />
-        </Link>
+        <ButtonText
+          icon={FiArrowLeft}
+          title="Voltar"
+          className="voltar"
+          onClick={() => navigate(-1)}
+        />
         <h2>Novo filme</h2>
 
         <div className="inputs">
@@ -81,7 +79,13 @@ export function NewMovie() {
         <Section>
           <h3>Marcadores</h3>
           <div className="tags">
-            <Genre value="Ficção científica" />
+            {tags.map((tag, index) => (
+              <Genre
+                key={String(index)}
+                value={tag}
+                onClick={() => handleRemoveTag(tag)}
+              />
+            ))}
             <Genre
               isnew
               value={newTag}
@@ -97,7 +101,7 @@ export function NewMovie() {
           <Button
             className="save"
             title="Salvar alterações"
-            onClick={addNewMovie}
+            onClick={handleAddNewMovie}
           />
         </Section>
       </Content>
